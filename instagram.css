@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(5, 70, 90);
+  display: flex;
+  justify-content: center;
+  font-family: Helvetica, sans-serif;
+}
+.app {
+  width: 50%;
+  background-color: white;
+  padding: 5px 20px;
+}
+/*
+header
+*/
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.header > h2 {
+  font-size: 30px;
+}
+.verifyTick {
+  width: 35px;
+  height: 35px;
+  position: relative;
+  top: 8px;
+}
+
+.leftSideLogo,
+.rightSideLogo {
+  align-self: center;
+}
+.leftSideLogo {
+  padding: 0 8px 0 5px;
+  font-size: 50px;
+  cursor: pointer;
+}
+.rightSideLogo {
+  padding: 0px 8px 0 20px;
+  position: relative;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.rightSideLogo > img {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  transform: translate(-50%, -50%);
+}
+/*
+main
+*/
+
+.mainInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.instaLogo {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 15px;
+}
+.mainInfoItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.mainInfoItem > h1 {
+  margin-bottom: 0;
+  font-size: 35px;
+}
+.mainInfoItem > span {
+  padding-top: 2px;
+  font-size: 20px;
+}
+/*
+bio
+*/
+.bio {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.bio > p,
+.bio > h1,
+.bio > a {
+  font-size: 27px;
+  margin: 1px 0;
+}
+.bio > a {
+  text-decoration: none;
+  color: rgb(4, 86, 163);
+}
+/*
+buttons
+*/
+.buttons {
+  margin: 15px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.buttons > button {
+  padding: 10px;
+  border-radius: 8px;
+}
+.bigButton {
+  flex-grow: 8;
+}
+.smallButton {
+  flex-grow: 2;
+}
+#message {
+  margin: 0 10px;
+  font-size: 25px;
+  font-weight: 600;
+  background-color: white;
+  border: 2px solid rgb(230, 230, 230);
+}
+
+#follow {
+  color: white;
+  background-color: rgb(4, 148, 214);
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+
+}
+#suggestion {
+  background-color: white;
+  border: 2px solid rgb(230, 230, 230);
+  position: relative;
+  cursor: pointer;
+
+}
+#suggestion > img {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+
+}
