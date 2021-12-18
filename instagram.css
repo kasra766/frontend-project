@@ -22,8 +22,12 @@ header
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
-.header > h2 {
+.header > li > h2 {
   font-size: 3rem;
 }
 .verifyTick {
@@ -33,13 +37,9 @@ header
   top: 0.8rem;
 }
 
-.leftSideLogo,
-.rightSideLogo {
-  align-self: center;
-}
 .leftSideLogo {
   padding: 0 0.8rem 1rem 0.5rem;
-  font-size: 50px;
+  font-size: 5rem;
   cursor: pointer;
 }
 .rightSideLogo {
@@ -51,11 +51,6 @@ header
 main
 */
 
-.mainInfo {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
 .instaLogo {
   width: 15rem;
   height: 15rem;
@@ -63,15 +58,19 @@ main
 }
 .mainInfoItem {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   margin-top: 2rem;
+  padding: 0;
+  list-style: none;
 }
-.mainInfoItem > h1 {
+
+.mainInfoItem > li > h1 {
   margin-bottom: 0;
   font-size: 3.5rem;
 }
-.mainInfoItem > span {
+.mainInfoItem > li > span {
   padding-top: 0.2rem;
   font-size: 2rem;
 }
@@ -103,21 +102,36 @@ buttons
   flex-direction: row;
   justify-content: space-between;
   align-items: stretch;
+  padding: 0;
+  list-style: none;
 }
-.buttons > button {
+.btnFollow,
+.btnMessage {
+  flex-grow: 8;
+}
+.btnMessage {
+  margin: 0 1rem;
+}
+.btnDownArrow {
+  flex-grow: 2;
+}
+.buttons > li > button {
   padding: 1rem;
   border-radius: 0.8rem;
 }
 .bigButton {
-  flex-grow: 8;
+  width: 100%;
 }
 .smallButton {
-  flex-grow: 2;
+  width: 100%;
+  background-color: white;
+  border: 0.2rem solid rgb(230, 230, 230);
+  cursor: pointer;
+  font-size: 2.5rem;
 }
 #message {
-  margin: 0 1rem;
   font-size: 2.5rem;
-  font-weight: 600;
+  font-weight: bold;
   background-color: white;
   border: 0.2rem solid rgb(230, 230, 230);
   cursor: pointer;
@@ -126,12 +140,8 @@ buttons
 #follow {
   color: white;
   background-color: rgb(4, 148, 214);
-  border: none;
   font-size: 2.5rem;
   cursor: pointer;
+  border: 0.2rem solid rgb(4, 148, 214);
 }
-#suggestion {
-  background-color: white;
-  border: 0.2rem solid rgb(230, 230, 230);
-  cursor: pointer;
-}
+

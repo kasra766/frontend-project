@@ -1,52 +1,92 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
-        <title>instagram</title>
-        <link rel="stylesheet" href="instagram.css">
-        <script src="https://kit.fontawesome.com/3881a7da9a.js" crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <div class="app">
-            <header>
-                <div class="header">
-                    <span class="leftSideLogo"><i class="fas fa-chevron-left" style="font-size:2.5rem;"></i></span>
-                    <h2>instagram<img class="verifyTick" src="verify-tick.png" alt="verify-tick"/></h2>
-                    <span class="rightSideLogo"><i class="fas fa-2x fa-ellipsis-h" style="font-size: 2.5rem;"></i></span>
-                </div>
-            </header>
-            <main>
-                <div class="main">
-                    <div class="mainInfo">
-                        <div>
-                            <img class="instaLogo" src="instalogo.png" alt="insta-logo">
-                        </div>
-                        <div class="mainInfoItem">
-                            <h1>6,039</h1>
-                            <span>Posts</span>
-                        </div>
-                        <div class="mainInfoItem">
-                            <h1>350 M</h1>
-                            <span>Followers</span>
-                        </div>
-                        <div class="mainInfoItem">
-                            <h1>101</h1>
-                            <span>Following</span>
-                        </div>
-                    </div>
-                    <div class="bio">
-                        <h1>Instagram</h1>
-                        <p>Bringing you closer to the people and things you love. <i class="fas fa-heart" style="color: red;"></i></p>
-                        <a href="#" id="link">www.facebook.com/covidsupport</a>
-                    </div>
-                    <div class="buttons">
-                        <button class="bigButton" id="follow">Follow</button>
-                        <button class="bigButton" id="message">Message</button>
-                        <button class="smallButton" id="suggestion"><i class="fas fa-1x fa-chevron-down" style="font-size: 15px;"></i></button>
-                    </div>
-                </div>
-            </main>
+  <head>
+    <title>instagram</title>
+    <link rel="stylesheet" href="instagram.css" />
+    <script
+      src="https://kit.fontawesome.com/3881a7da9a.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <div>
+          <ul class="header">
+            <li>
+              <span class="leftSideLogo"
+                ><i class="fas fa-chevron-left" style="font-size: 2.5rem"></i
+              ></span>
+            </li>
+            <li>
+              <h2>
+                instagram<img
+                  class="verifyTick"
+                  src="verify-tick.png"
+                  alt="verify-tick"
+                />
+              </h2>
+            </li>
+            <li>
+              <span class="rightSideLogo"
+                ><i
+                  class="fas fa-2x fa-ellipsis-h"
+                  style="font-size: 2.5rem"
+                ></i
+              ></span>
+            </li>
+          </ul>
         </div>
-        
-        <script src="instagram.js"></script>
-    </body>
+      </header>
+      <main>
+        <div class="main">
+          <div>
+            <ul class="mainInfoItem">
+              <li>
+                <img class="instaLogo" src="instalogo.png" alt="insta-logo" />
+              </li>
+              <li>
+                <h1>6,039</h1>
+                <span>Posts</span>
+              </li>
+              <li>
+                <h1>350 M</h1>
+                <span>Followers</span>
+              </li>
+              <li>
+                <h1>101</h1>
+                <span>Following</span>
+              </li>
+            </ul>
+          </div>
+          <div class="bio">
+            <h1>Instagram</h1>
+            <p>
+              Bringing you closer to the people and things you love.
+              <i class="fas fa-heart" style="color: red"></i>
+            </p>
+            <a href="#" id="link">www.facebook.com/covidsupport</a>
+          </div>
+          <ul class="buttons">
+            <li class="btnFollow">
+              <button class="bigButton" id="follow">Follow</button>
+            </li>
+            <li class="btnMessage">
+              <button class="bigButton" id="message">Message</button>
+            </li>
+            <li class="btnDownArrow">
+              <button class="smallButton">
+                <i
+                  class="fas fa-1x fa-chevron-down"
+                  style="font-size: 1.5rem"
+                ></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </main>
+    </div>
+
+    <script src="instagram.js"></script>
+  </body>
 </html>

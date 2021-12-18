@@ -23,7 +23,7 @@ message.addEventListener("click", () => {
   console.log("Message");
 });
 
-const suggestion = document.querySelector("#suggestion");
+const suggestion = document.querySelector(".smallButton");
 suggestion.addEventListener("click", () => {
   console.log("Suggestion");
 });
