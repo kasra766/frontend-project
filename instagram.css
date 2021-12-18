@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
 }
+html {
+  font-size: 62.5%;
+}
 body {
   background-color: rgb(5, 70, 90);
   display: flex;
@@ -10,7 +13,7 @@ body {
 .app {
   width: 50%;
   background-color: white;
-  padding: 5px 20px;
+  padding: 0.5rem 2rem;
 }
 /*
 header
@@ -21,13 +24,13 @@ header
   justify-content: space-between;
 }
 .header > h2 {
-  font-size: 30px;
+  font-size: 3rem;
 }
 .verifyTick {
-  width: 35px;
-  height: 35px;
+  width: 3.5rem;
+  height: 3.5rem;
   position: relative;
-  top: 8px;
+  top: 0.8rem;
 }
 
 .leftSideLogo,
@@ -35,12 +38,12 @@ header
   align-self: center;
 }
 .leftSideLogo {
-  padding: 0 8px 10px 5px;
+  padding: 0 0.8rem 1rem 0.5rem;
   font-size: 50px;
   cursor: pointer;
 }
 .rightSideLogo {
-  padding: 10px 8px 0 20px;
+  padding: 1rem 0.8rem 0 2rem;
   cursor: pointer;
 }
 
@@ -54,23 +57,23 @@ main
   justify-content: space-between;
 }
 .instaLogo {
-  width: 150px;
-  height: 150px;
-  margin-bottom: 15px;
+  width: 15rem;
+  height: 15rem;
+  margin-bottom: 1.5rem;
 }
 .mainInfoItem {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 2rem;
 }
 .mainInfoItem > h1 {
   margin-bottom: 0;
-  font-size: 35px;
+  font-size: 3.5rem;
 }
 .mainInfoItem > span {
-  padding-top: 2px;
-  font-size: 20px;
+  padding-top: 0.2rem;
+  font-size: 2rem;
 }
 /*
 bio
@@ -84,8 +87,8 @@ bio
 .bio > p,
 .bio > h1,
 .bio > a {
-  font-size: 27px;
-  margin: 1px 0;
+  font-size: 2.7rem;
+  margin: 0.1rem 0;
 }
 .bio > a {
   text-decoration: none;
@@ -95,15 +98,15 @@ bio
 buttons
 */
 .buttons {
-  margin: 15px 0;
+  margin: 1.5rem 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: stretch;
 }
 .buttons > button {
-  padding: 10px;
-  border-radius: 8px;
+  padding: 1rem;
+  border-radius: 0.8rem;
 }
 .bigButton {
   flex-grow: 8;
@@ -112,11 +115,11 @@ buttons
   flex-grow: 2;
 }
 #message {
-  margin: 0 10px;
-  font-size: 25px;
+  margin: 0 1rem;
+  font-size: 2.5rem;
   font-weight: 600;
   background-color: white;
-  border: 2px solid rgb(230, 230, 230);
+  border: 0.2rem solid rgb(230, 230, 230);
   cursor: pointer;
 }
 
@@ -124,11 +127,11 @@ buttons
   color: white;
   background-color: rgb(4, 148, 214);
   border: none;
-  font-size: 25px;
+  font-size: 2.5rem;
   cursor: pointer;
 }
 #suggestion {
   background-color: white;
-  border: 2px solid rgb(230, 230, 230);
+  border: 0.2rem solid rgb(230, 230, 230);
   cursor: pointer;
 }
