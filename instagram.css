@@ -1,18 +1,24 @@
 * {
   box-sizing: border-box;
 }
+:root {
+  --bodycolor: rgb(0, 101, 126);
+  --bgcolor: white;
+  --followColor: rgb(4, 148, 214);
+  --brColor: rgb(230, 230, 230);
+}
 html {
   font-size: 62.5%;
 }
 body {
-  background-color: rgb(5, 70, 90);
+  background-color: rgb(0, 101, 126);
   display: flex;
   justify-content: center;
   font-family: Helvetica, sans-serif;
 }
 .app {
   width: 50%;
-  background-color: white;
+  background-color: var(--bgcolor);
   padding: 0.5rem 2rem;
 }
 /*
@@ -124,23 +130,23 @@ buttons
 }
 .smallButton {
   width: 100%;
-  background-color: white;
-  border: 0.2rem solid rgb(230, 230, 230);
+  background-color: var(--bgcolor);
+  border: 0.2rem solid var(--brColor);
   cursor: pointer;
   font-size: 2.5rem;
 }
 #message {
   font-size: 2.5rem;
   font-weight: bold;
-  background-color: white;
-  border: 0.2rem solid rgb(230, 230, 230);
+  background-color: var(--bgcolor);
+  border: 0.2rem solid var(--brColor);
   cursor: pointer;
 }
 
 #follow {
   color: white;
-  background-color: rgb(4, 148, 214);
+  background-color: var(--followColor);
   font-size: 2.5rem;
   cursor: pointer;
-  border: 0.2rem solid rgb(4, 148, 214);
+  border: 0.2rem solid var(--followColor);
 }
