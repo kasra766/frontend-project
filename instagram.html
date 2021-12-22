@@ -39,23 +39,23 @@
         </div>
       </header>
       <main>
-        <div class="main">
+        <div>
           <div>
             <ul class="mainInfoItem">
               <li>
-                <img class="instaLogo" src="instalogo.png" alt="insta-logo" />
+                <img src="instalogo.png" alt="insta-logo" />
               </li>
               <li>
                 <h1>6,039</h1>
-                <span>Posts</span>
+                <p>Posts</p>
               </li>
               <li>
                 <h1>350 M</h1>
-                <span>Followers</span>
+                <p>Followers</p>
               </li>
               <li>
                 <h1>101</h1>
-                <span>Following</span>
+                <p>Following</p>
               </li>
             </ul>
           </div>
@@ -66,29 +66,60 @@
               <i class="fas fa-heart" style="color: red"></i>
             </p>
             <a href="#" class="Link btn">www.facebook.com/covidsupport</a>
+
           </div>
-          <div>
-            <ul class="buttons">
-              <li class="btnFollow">
-                <button class="Follow bigButton btn">Follow</button>
-              </li>
-              <li class="btnMessage">
-                <button class="Message bigButton btn">Message</button>
-              </li>
-              <li class="btnDownArrow">
-                <button class="Suggestion smallButton btn">
-                  <i
-                    class="fas fa-1x fa-chevron-down"
-                    style="font-size: 1.5rem"
-                  ></i>
-                </button>
-              </li>
-            </ul>
-          </div>
+          <div id="root"></div>
         </div>
       </main>
     </div>
-
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
     <script src="instagram.js"></script>
+    <!---------------------------------------React----------------------------------->
+    <script type="text/javascript">
+      //////////////////////////////////////////////////////
+      const i = React.createElement("i", {
+        className: "Suggestion fas fa-1x fa-chevron-down",
+      });
+      //////////////////////////////////////////////////////
+      const li = (parentClass, childClass, childContext) =>
+        React.createElement(
+          "li",
+          {
+            className: parentClass,
+          },
+          React.createElement(
+            "button",
+            {
+              className: childClass,
+              onClick: (e) => {
+                console.log(e.target.classList[0]);
+              },
+            },
+            childContext
+          )
+        );
+      //////////////////////////////////////////////////////
+
+      const ul = React.createElement(
+        "ul",
+        {
+          className: "buttons",
+        },
+        li("btnFollow", "Follow bigButton", "Follow"),
+        li("btnMessage", "Message bigButton", "Message"),
+        li("btnDownArrow", "Suggestion smallButton", i)
+      );
+      //////////////////////////////////////////////////////
+
+      const root = document.querySelector("#root");
+      ReactDOM.render(ul, root);
+    </script>
   </body>
 </html>
