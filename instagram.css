@@ -58,7 +58,6 @@ header
 main
 */
 
-
 .mainInfoItem {
   display: flex;
   flex-direction: row;
@@ -68,7 +67,7 @@ main
   padding: 0;
   list-style: none;
 }
-.mainInfoItem >li> img{
+.mainInfoItem > li > img {
   width: 15rem;
   height: 15rem;
   margin-bottom: 1.5rem;
