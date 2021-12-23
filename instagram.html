@@ -75,6 +75,10 @@
       crossorigin="anonymous"
     ></script>
     <script
+      src="https://kit.fontawesome.com/3881a7da9a.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
       src="https://unpkg.com/react@17/umd/react.development.js"
       crossorigin
     ></script>
@@ -82,45 +86,9 @@
       src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
       crossorigin
     ></script>
-    <script type="text/javascript">
-      //////////////////////////////////////////////////////
-      const i = React.createElement("i", {
-        className: "Suggestion fas fa-1x fa-chevron-down",
-      });
-      //////////////////////////////////////////////////////
-      const li = (parentClass, childClass, childContext) =>
-        React.createElement(
-          "li",
-          {
-            className: parentClass,
-          },
-          React.createElement(
-            "button",
-            {
-              className: childClass,
-              onClick: (e) => {
-                console.log(e.target.classList[0]);
-              },
-            },
-            childContext
-          )
-        );
-      //////////////////////////////////////////////////////
 
-      const ul = React.createElement(
-        "ul",
-        {
-          className: "buttons",
-        },
-        li("btnFollow", "Follow bigButton", "Follow"),
-        li("btnMessage", "Message bigButton", "Message"),
-        li("btnDownArrow", "Suggestion smallButton", i)
-      );
-      //////////////////////////////////////////////////////
-
-      const root = document.querySelector("#root");
-      ReactDOM.render(ul, root);
-      
-    </script>
+    <script src="instagram.js"></script>
+    <!---------------------------------------React----------------------------------->
+    <script src="react.js"></script>
   </body>
 </html>
