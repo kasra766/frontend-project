@@ -4,9 +4,6 @@
     <title>instagram</title>
     <link rel="stylesheet" href="instagram.css" />
 
-    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script
       src="https://kit.fontawesome.com/3881a7da9a.js"
       crossorigin="anonymous"
@@ -15,101 +12,10 @@
   <body>
     <div id="root"></div>
 
-    <script type="text/babel">
-      const Header = () => {
-        return (
-          <div>
-            <ul className="header">
-              <li>
-                <span className="Backward leftSideLogo btn">
-                  <i
-                    className="fas fa-chevron-left"
-                    style={{ fontSize: "3.5rem" }}
-                  ></i>
-                </span>
-              </li>
-              <li>
-                <h2>
-                  instagram
-                  <img
-                    className="verifyTick"
-                    src="verify-tick.png"
-                    alt="verify-tick"
-                  />
-                </h2>
-              </li>
-              <li>
-                <span className="Setting rightSideLogo btn">
-                  <i
-                    className="fas fa-2x fa-ellipsis-h"
-                    style={{ fontSize: "2.5rem", paddingTop: "1.2rem" }}
-                  ></i>
-                </span>
-              </li>
-            </ul>
-          </div>
-        );
-      };
-      const Body = () => {
-        return (
-          <div>
-            <div>
-              <ul className="mainInfoItem">
-                <li>
-                  <img src="instalogo.png" alt="insta-logo" />
-                </li>
-                <li>
-                  <h1>6,039</h1>
-                  <p>Posts</p>
-                </li>
-                <li>
-                  <h1>350 M</h1>
-                  <p>Followers</p>
-                </li>
-                <li>
-                  <h1>101</h1>
-                  <p>Following</p>
-                </li>
-              </ul>
-            </div>
-            <div className="bio">
-              <h1>Instagram</h1>
-              <p>
-                Bringing you closer to the people and things you love.
-                <i className="fas fa-heart" style={{ color: "red" }}></i>
-              </p>
-              <a href="#" className="Link btn">
-                www.facebook.com/covidsupport
-              </a>
-            </div>
-            <div>
-              <ul className="buttons">
-                <li className="btnFollow">
-                  <button className="Follow bigButton">Follow</button>
-                </li>
-                <li className="btnMessage">
-                  <button className="Message bigButton">Message</button>
-                </li>
-                <li className="btnDownArrow">
-                  <button className="smallButton">
-                    <i className="Suggestion fas fa-1x fa-chevron-down"></i>
-                  </button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        );
-      };
-      const App = () => {
-        return (
-          <div className="app">
-            <Header />
-            <Body />
-          </div>
-        );
-      };
-
-      ReactDOM.render(<App />, document.getElementById("root"));
-    </script>
+    <script src="./app.js" type="text/babel"></script>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
   </body>
 </html>

@@ -32,14 +32,17 @@ header
   margin: 0;
   list-style: none;
 }
-.header > li > h2 {
+.header > li > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.header > li > div > h1 {
   font-size: 3rem;
 }
 .verifyTick {
   width: 3.5rem;
   height: 3.5rem;
-  position: relative;
-  top: 0.8rem;
 }
 
 .leftSideLogo {
@@ -47,15 +50,20 @@ header
   font-size: 5rem;
   cursor: pointer;
 }
+.leftSideLogo > i {
+  font-size: 3.5rem;
+}
 .rightSideLogo {
   padding: 1rem 0.8rem 0 2rem;
   cursor: pointer;
 }
-
+.rightSideLogo > i {
+  font-size: 2.5rem;
+  padding-top: 1.2rem;
+}
 /*
 main
 */
-
 
 .mainInfoItem {
   display: flex;
@@ -66,7 +74,7 @@ main
   padding: 0;
   list-style: none;
 }
-.mainInfoItem >li> img{
+.mainInfoItem > li > img {
   width: 15rem;
   height: 15rem;
   margin-bottom: 1.5rem;
@@ -99,6 +107,9 @@ bio
 .bio > a {
   text-decoration: none;
   color: rgb(4, 86, 163);
+}
+.bio > p > i {
+  color: red;
 }
 /*
 buttons
@@ -139,7 +150,7 @@ buttons
 .smallButton > i {
   font-size: 1.5rem;
 }
-.Message {
+.message {
   font-size: 2.5rem;
   font-weight: bold;
   background-color: var(--bgcolor);
@@ -147,7 +158,7 @@ buttons
   cursor: pointer;
 }
 
-.Follow {
+.follow {
   color: white;
   background-color: var(--followColor);
   font-size: 2.5rem;
