@@ -150,7 +150,7 @@ buttons
 .smallButton > i {
   font-size: 1.5rem;
 }
-.message {
+.Message {
   font-size: 2.5rem;
   font-weight: bold;
   background-color: var(--bgcolor);
@@ -158,7 +158,7 @@ buttons
   cursor: pointer;
 }
 
-.follow {
+.Follow {
   color: white;
   background-color: var(--followColor);
   font-size: 2.5rem;

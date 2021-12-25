@@ -1,14 +1,13 @@
+const click = (e) => {
+  console.log(e.target.classList[0]);
+};
+
 const Header = ({ title }) => (
   <>
     <ul className="header">
       <li>
-        <span
-          onClick={() => {
-            console.log("Backward");
-          }}
-          className="Backward leftSideLogo"
-        >
-          <i className="fas fa-chevron-left"></i>
+        <span onClick={click} className="Backward leftSideLogo">
+          <i className="Backward fas fa-chevron-left"></i>
         </span>
       </li>
       <li>
@@ -22,13 +21,8 @@ const Header = ({ title }) => (
         </div>
       </li>
       <li>
-        <span
-          onClick={() => {
-            console.log("Setting");
-          }}
-          className="rightSideLogo"
-        >
-          <i className="fas fa-2x fa-ellipsis-h"></i>
+        <span onClick={click} className="Setting rightSideLogo">
+          <i className="Setting fas fa-2x fa-ellipsis-h"></i>
         </span>
       </li>
     </ul>
@@ -65,45 +59,25 @@ const Body = ({ btnFollow }) => (
         Bringing you closer to the people and things you love.
         <i className="fas fa-heart"></i>
       </p>
-      <a
-        href="#"
-        onClick={() => {
-          console.log("Link");
-        }}
-      >
+      <a href="#" onClick={click} className="Link">
         www.facebook.com/covidsupport
       </a>
     </div>
     <div>
       <ul className="buttons">
         <li className="btnFollow">
-          <button
-            onClick={() => {
-              console.log("Follow");
-            }}
-            className="follow bigButton"
-          >
+          <button onClick={click} className="Follow bigButton">
             {btnFollow}
           </button>
         </li>
         <li className="btnMessage">
-          <button
-            onClick={() => {
-              console.log("Message");
-            }}
-            className="message bigButton"
-          >
+          <button onClick={click} className="Message bigButton">
             Message
           </button>
         </li>
         <li className="btnDownArrow">
-          <button
-            onClick={() => {
-              console.log("Suggestion");
-            }}
-            className="smallButton"
-          >
-            <i className="fas fa-1x fa-chevron-down"></i>
+          <button onClick={click} className="Suggestion smallButton">
+            <i className="Suggestion fas fa-1x fa-chevron-down"></i>
           </button>
         </li>
       </ul>
