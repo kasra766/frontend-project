@@ -3,6 +3,7 @@
 }
 :root {
   --bodycolor: rgb(0, 101, 126);
+
   --bgcolor: rgb(255, 255, 255);
   --followColor: rgb(4, 148, 214);
   --brColor: rgb(230, 230, 230);
@@ -149,6 +150,7 @@ buttons
   cursor: pointer;
   font-size: 2.5rem;
 }
+
 .smallButton > i {
   font-size: 1.5rem;
 }
