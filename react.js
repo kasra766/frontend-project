@@ -14,27 +14,28 @@ const App = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
-
-
-  
   useEffect(() => {
-    fetch("http://jsonplaceholder.typicode.com/users")
+    fetch("http://moviesapi.ir/api/v1/movies?page={page}")
       .then((response) => response.json())
       .then((res) => {
-        setData(res);
+        setData(res.data);
         setLoading(false);
       }),
       (error) => {
         console.error("Error fetching data:", error);
       };
-  }, [data]);
-
-
-
+  }, []);
+  console.log(data);
   return loading ? (
     <div>Loading...</div>
   ) : (
-    <div>{JSON.stringify(data, null, 2)}</div>
+    <div className="movies">
+      {data.map((item) => (
+        <div key={item.id}>
+          <h1>{item.title}</h1> <img src={item.poster} />
+        </div>
+      ))}
+    </div>
   );
 };
 //////////////////////////////////////////////////////
