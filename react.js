@@ -27,14 +27,109 @@ const App = () => {
   }, []);
   console.log(data);
   return loading ? (
-    <div>Loading...</div>
+    <div className="d-flex justify-content-center align-items-center">
+      <div>
+        <div class="spinner-grow text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-secondary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-success" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-danger" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-warning" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-info" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </div>
   ) : (
     <div className="movies">
-      {data.map((item) => (
-        <div key={item.id}>
-          <h1>{item.title}</h1> <img src={item.poster} />
+      <div
+        id="carouselExampleCaptions"
+        className="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div className="carousel-indicators">
+          {data.map((item) => {
+            if (data.indexOf(item) === 0) {
+              return (
+                <button
+                  key={item.id}
+                  type="button"
+                  data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide-to="0"
+                  className="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+              );
+            }
+            return (
+              <button
+                key={item.id}
+                type="button"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide-to={`${data.indexOf(item)}`}
+                aria-label={`Slide ${data.indexOf(item) + 1}`}
+              ></button>
+            );
+          })}
         </div>
-      ))}
+        <div className="carousel-inner">
+          {data.map((item) => {
+            if (data.indexOf(item) === 0) {
+              return (
+                <div key={item.id} className="carousel-item active">
+                  <img src={item.poster} className="d-block w-100" />
+                  <div className="carousel-caption d-none d-md-block">
+                    <h1>{item.title}</h1>
+                  </div>
+                </div>
+              );
+            }
+            return (
+              <div key={item.id} className="carousel-item">
+                <img src={item.poster} className="d-block w-100" />
+                <div className="carousel-caption d-none d-md-block">
+                  <h1>{item.title}</h1>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <button
+          className="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
+          <span
+            className="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Previous</span>
+        </button>
+        <button
+          className="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
+          <span
+            className="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Next</span>
+        </button>
+      </div>
     </div>
   );
 };
