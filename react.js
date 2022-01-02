@@ -13,6 +13,7 @@ const App = () => {
   const { useState, useEffect } = React;
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [showDetail, setShowDetail] = useState(null);
 
   useEffect(() => {
     fetch("http://moviesapi.ir/api/v1/movies?page={page}")
@@ -20,32 +21,38 @@ const App = () => {
       .then((res) => {
         setData(res.data);
         setLoading(false);
+        setShowDetail(res.data[0]);
       }),
       (error) => {
         console.error("Error fetching data:", error);
       };
   }, []);
+
+  const handleClick = (id) => {
+    setShowDetail(data.find((item) => item.id === id));
+  };
+
   console.log(data);
   return loading ? (
     <div className="d-flex justify-content-center align-items-center">
       <div>
-        <div class="spinner-grow text-primary" role="status">
-          <span class="visually-hidden">Loading...</span>
+        <div className="spinner-grow text-primary" role="status">
+          <span className="visually-hidden">Loading...</span>
         </div>
-        <div class="spinner-grow text-secondary" role="status">
-          <span class="visually-hidden">Loading...</span>
+        <div className="spinner-grow text-secondary" role="status">
+          <span className="visually-hidden">Loading...</span>
         </div>
-        <div class="spinner-grow text-success" role="status">
-          <span class="visually-hidden">Loading...</span>
+        <div className="spinner-grow text-success" role="status">
+          <span className="visually-hidden">Loading...</span>
         </div>
-        <div class="spinner-grow text-danger" role="status">
-          <span class="visually-hidden">Loading...</span>
+        <div className="spinner-grow text-danger" role="status">
+          <span className="visually-hidden">Loading...</span>
         </div>
-        <div class="spinner-grow text-warning" role="status">
-          <span class="visually-hidden">Loading...</span>
+        <div className="spinner-grow text-warning" role="status">
+          <span className="visually-hidden">Loading...</span>
         </div>
-        <div class="spinner-grow text-info" role="status">
-          <span class="visually-hidden">Loading...</span>
+        <div className="spinner-grow text-info" role="status">
+          <span className="visually-hidden">Loading...</span>
         </div>
       </div>
     </div>
@@ -86,7 +93,14 @@ const App = () => {
           {data.map((item) => {
             if (data.indexOf(item) === 0) {
               return (
-                <div key={item.id} className="carousel-item active">
+                <div
+                  onClick={() => handleClick(item.id)}
+                  key={item.id}
+                  value={item}
+                  className="carousel-item active"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                >
                   <img src={item.poster} className="d-block w-100" />
                   <div className="carousel-caption d-none d-md-block">
                     <h1>{item.title}</h1>
@@ -95,7 +109,14 @@ const App = () => {
               );
             }
             return (
-              <div key={item.id} className="carousel-item">
+              <div
+                onClick={() => handleClick(item.id)}
+                key={item.id}
+                value={item}
+                className="carousel-item"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
                 <img src={item.poster} className="d-block w-100" />
                 <div className="carousel-caption d-none d-md-block">
                   <h1>{item.title}</h1>
@@ -129,6 +150,43 @@ const App = () => {
           ></span>
           <span className="visually-hidden">Next</span>
         </button>
+      </div>
+      <div>
+        {showDetail && (
+          <div
+            className="modal fade"
+            id="exampleModal"
+            tabIndex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title" id="exampleModalLabel">
+                    {showDetail.title}
+                  </h5>
+                  <button
+                    type="button"
+                    className="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div className="modal-body"></div>
+                <div className="modal-footer">
+                  <button
+                    type="button"
+                    className="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
