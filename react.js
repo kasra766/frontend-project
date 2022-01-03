@@ -163,9 +163,9 @@ const App = () => {
             <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
               <div className="modal-content">
                 <div className="modal-header">
-                  <h5 className="modal-title" id="exampleModalLabel">
+                  <h3 className="modal-title" id="exampleModalLabel">
                     {showDetail.title}
-                  </h5>
+                  </h3>
                   <button
                     type="button"
                     className="btn-close"
@@ -173,11 +173,34 @@ const App = () => {
                     aria-label="Close"
                   ></button>
                 </div>
-                <div className="modal-body"></div>
+                <div className="modal-body">
+                  <div className="d-flex flex-column">
+                    <span className="fs-4">Country: {showDetail.country}</span>
+                    <span className="fs-4">
+                      Genres: {showDetail.genres.join(" , ")}
+                    </span>
+                    <span className="fs-4">Imdb: {showDetail.imdb_rating}</span>
+                    <span className="fs-4">Year: {showDetail.year}</span>
+                  </div>
+                  <div>
+                    <span className="fs-4">Images:</span>
+                    <div className="d-flex justify-content-start flex-wrap">
+                      {showDetail.images.map((img) => (
+                        <img
+                          className="my-2 mx-2"
+                          key={img}
+                          src={img}
+                          alt={showDetail.title}
+                          width="200px"
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </div>
                 <div className="modal-footer">
                   <button
                     type="button"
-                    className="btn btn-secondary"
+                    className="btn btn-secondary btn-lg"
                     data-bs-dismiss="modal"
                   >
                     Close
