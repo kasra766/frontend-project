@@ -33,7 +33,7 @@ const slideGenerator = (data, item, handleClick) => {
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
       >
-        <img src={item.poster} className="d-block w-100" />
+        <img src={item.poster} className="d-block w-100 pointer" />
       </div>
     );
   }
@@ -46,7 +46,7 @@ const slideGenerator = (data, item, handleClick) => {
       data-bs-toggle="modal"
       data-bs-target="#exampleModal"
     >
-      <img src={item.poster} className="d-block w-100" />
+      <img src={item.poster} className="d-block w-100 pointer" />
     </div>
   );
 };
@@ -88,10 +88,8 @@ const Carousel = ({ data, handleClick, btnGenerator, slideGenerator }) => {
     carousel.addEventListener(
       "slide.bs.carousel",
       debounce(() => {
-        // const { src } = document.querySelector("div.carousel-item.active img");
-        // document.getElementById("bg").style.backgroundImage = `url(${src})`;
         changeBackground();
-      }, 700)
+      }, 606)
     );
   }, []);
   return (
@@ -142,7 +140,7 @@ const Modal = ({ showDetail }) => (
     <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div className="modal-content">
         <div className="modal-header">
-          <h3 className="modal-title" id="exampleModalLabel">
+          <h3 className="modal-title fs-2" id="exampleModalLabel">
             {showDetail.title}
           </h3>
           <button
@@ -154,15 +152,15 @@ const Modal = ({ showDetail }) => (
         </div>
         <div className="modal-body">
           <div className="d-flex flex-column">
-            <span className="fs-4">Country: {showDetail.country}</span>
-            <span className="fs-4">
+            <span className="fs-2">Country: {showDetail.country}</span>
+            <span className="fs-2">
               Genres: {showDetail.genres.join(" , ")}
             </span>
-            <span className="fs-4">Imdb: {showDetail.imdb_rating}</span>
-            <span className="fs-4">Year: {showDetail.year}</span>
+            <span className="fs-2">Imdb: {showDetail.imdb_rating}</span>
+            <span className="fs-2">Year: {showDetail.year}</span>
           </div>
           <div>
-            <span className="fs-4">Images:</span>
+            <span className="fs-2">Images:</span>
             <div className="d-flex justify-content-start flex-wrap">
               {showDetail.images.map((img) => (
                 <img
