@@ -1,13 +1,3 @@
-// const ShowDuck = () => {
-//   const { useState, useEffect } = React;
-//   const [data, setData] = useState(null);
-//   useEffect(() => {
-//     fetch("https://random-d.uk/api/v2")
-//       .then((response) => response.json())
-//       .then((json) => setData(json));
-//   }, [data]);
-//   return <div>{JSON.stringify(data)}</div>;
-// };
 const btnGenerator = (data, item) => {
   if (data.indexOf(item) === 0) {
     return (
@@ -44,9 +34,6 @@ const slideGenerator = (data, item, handleClick) => {
         data-bs-target="#exampleModal"
       >
         <img src={item.poster} className="d-block w-100" />
-        <div className="carousel-caption d-none d-md-block">
-          <h1>{item.title}</h1>
-        </div>
       </div>
     );
   }
@@ -60,48 +47,52 @@ const slideGenerator = (data, item, handleClick) => {
       data-bs-target="#exampleModal"
     >
       <img src={item.poster} className="d-block w-100" />
-      <div className="carousel-caption d-none d-md-block">
-        <h1>{item.title}</h1>
-      </div>
     </div>
   );
 };
 const Loading = () => (
-  <div className="d-flex justify-content-center align-items-center">
-    <div>
-      <div className="spinner-grow text-primary" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </div>
-      <div className="spinner-grow text-secondary" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </div>
-      <div className="spinner-grow text-success" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </div>
-      <div className="spinner-grow text-danger" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </div>
-      <div className="spinner-grow text-warning" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </div>
-      <div className="spinner-grow text-info" role="status">
-        <span className="visually-hidden">Loading...</span>
+  <div className="loading">
+    <div className="loadingio-spinner-double-ring-oi64sbun2h9">
+      <div className="ldio-o6jjvhu30fq">
+        <div></div>
+        <div></div>
+        <div>
+          <div></div>
+        </div>
+        <div>
+          <div></div>
+        </div>
       </div>
     </div>
   </div>
 );
 
 const Carousel = ({ data, handleClick, btnGenerator, slideGenerator }) => {
-  const { useEffect, useCallback } = React;
-  const changeBackground = useCallback(() => {
+  const { useEffect } = React;
+  const changeBackground = () => {
     const { src } = document.querySelector("div.carousel-item.active img");
-    document.body.style.backgroundImage = `url(${src})`;
-    console.log("change");
-  }, []);
-  
+    document.getElementById("bg").style.backgroundImage = `url(${src})`;
+  };
+  function debounce(callback, wait) {
+    let timerId;
+    return (...args) => {
+      clearTimeout(timerId);
+      timerId = setTimeout(() => {
+        callback(...args);
+      }, wait);
+    };
+  }
   useEffect(() => {
+    changeBackground();
     const carousel = document.getElementById("carouselExampleCaptions");
-    carousel.addEventListener("slide.bs.carousel", changeBackground);
+    carousel.addEventListener(
+      "slide.bs.carousel",
+      debounce(() => {
+        // const { src } = document.querySelector("div.carousel-item.active img");
+        // document.getElementById("bg").style.backgroundImage = `url(${src})`;
+        changeBackground();
+      }, 700)
+    );
   }, []);
   return (
     <div
@@ -112,7 +103,7 @@ const Carousel = ({ data, handleClick, btnGenerator, slideGenerator }) => {
       <div className="carousel-indicators">
         {data.map((item) => btnGenerator(data, item))}
       </div>
-      <div className="carousel-inner">
+      <div className="carousel-inner corner shadow-lg">
         {data.map((item) => slideGenerator(data, item, handleClick))}
       </div>
 
@@ -175,7 +166,7 @@ const Modal = ({ showDetail }) => (
             <div className="d-flex justify-content-start flex-wrap">
               {showDetail.images.map((img) => (
                 <img
-                  className="my-2 mx-2"
+                  className="my-2 mx-2 rounded-3"
                   key={img}
                   src={img}
                   alt={showDetail.title}
@@ -215,26 +206,23 @@ const App = () => {
         console.error("Error fetching data:", error);
       };
   }, []);
-
   const handleClick = (id) => {
     setShowDetail(data.find((item) => item.id === id));
   };
-  // const handleBg = () =>{
-  //   const {src} = document.querySelector("div.carousel-item.active img");
-  //   setBg(src);
-
-  // }
 
   return loading ? (
     <Loading />
   ) : (
-    <div className="movies">
-      <Carousel
-        data={data}
-        handleClick={handleClick}
-        btnGenerator={btnGenerator}
-        slideGenerator={slideGenerator}
-      />
+    <div>
+      <div id="bg"></div>
+      <div className="movies">
+        <Carousel
+          data={data}
+          handleClick={handleClick}
+          btnGenerator={btnGenerator}
+          slideGenerator={slideGenerator}
+        />
+      </div>
       {showDetail && <Modal showDetail={showDetail} />}
     </div>
   );
